@@ -1,3 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <resources>
-    <string name="app_name">BLEIRemote</string>
+    <string name="ble_not_supported">BLE is not supported</string>
+    <string name="label_data">Data:</string>
+    <string name="label_device_address">Device address:</string>
+    <string name="label_state">State:</string>
+    <string name="no_data">No data</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="title_devices">BLE Device Scan</string>
+    <string name="error_bluetooth_not_supported">Bluetooth not supported.</string>
+
+    <string name="unknown_device">Unknown device</string>
+    <string name="unknown_characteristic">Unknown characteristic</string>
+    <string name="unknown_service">Unknown service</string>
+
+    <!-- Menu items -->
+    <string name="menu_connect">Connect</string>
+    <string name="menu_disconnect">Disconnect</string>
+    <string name="menu_scan">Scan</string>
+    <string name="menu_stop">Stop</string>
+
+    <string name="button_text_on_off">On/Off</string>
+    <string name="button_text_muting">Muting</string>
+    <string name="button_text_fm_1">1</string>
+    <string name="button_text_fm_5">5</string>
+    <string name="button_text_deck_play">Deck Play</string>
+    <string name="button_text_cd_play">CD Play</string>
+    <string name="button_text_cd_program">Program</string>
+    <string name="button_text_cd_4">4</string>
+    <string name="button_text_cd_8">8</string>
+    <string name="button_text_fm_2">2</string>
+    <string name="button_text_fm_6">6</string>
+    <string name="button_text_fm_3">3</string>
+    <string name="button_text_fm_4">4</string>
+    <string name="button_text_fm_7">7</string>
+    <string name="button_text_fm_8">8</string>
+    <string name="button_text_fm_9">9</string>
+    <string name="button_text_fm_0">0</string>
+    <string name="button_text_deck_stop">Deck Stop</string>
+    <string name="button_text_cd_stop">CD Stop</string>
+    <string name="button_text_cd_skip_rew">CD Rew</string>
+    <string name="button_text_cd_skip_ff">CD FF</string>
+    <string name="button_text_cd_1">1</string>
+    <string name="button_text_cd_2">2</string>
+    <string name="button_text_cd_3">3</string>
+    <string name="button_text_cd_5">5</string>
+    <string name="button_text_cd_6">6</string>
+    <string name="button_text_cd_7">7</string>
+    <string name="button_text_cd_9">9</string>
+    <string name="button_text_cd_0">0</string>
+    <string name="button_text_cd_plus_10">+10</string>
+    <string name="button_text_vol_down">Vol-</string>
+    <string name="button_text_vol_up">Vol+</string>
+    <string name="title_activity_device_scan">DeviceScanActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>
