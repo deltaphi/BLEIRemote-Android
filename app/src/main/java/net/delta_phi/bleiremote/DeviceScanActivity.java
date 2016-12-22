@@ -91,8 +91,14 @@ public class DeviceScanActivity extends ListActivity {
         mBluetoothLeScanner = mBluetoothAdapter.getBluetoothLeScanner();
 
         // Checks if Bluetooth is supported on the device.
-        if (mBluetoothAdapter == null || mBluetoothLeScanner == null) {
+        if (mBluetoothAdapter == null) {
             Toast.makeText(this, R.string.error_bluetooth_not_supported, Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
+
+        if (mBluetoothLeScanner == null) {
+            Toast.makeText(this, R.string.ble_not_supported, Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
@@ -145,10 +151,8 @@ public class DeviceScanActivity extends ListActivity {
         // Ensures Bluetooth is enabled on the device.  If Bluetooth is not currently enabled,
         // fire an intent to display a dialog asking the user to grant permission to enable it.
         if (!mBluetoothAdapter.isEnabled()) {
-            if (!mBluetoothAdapter.isEnabled()) {
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-            }
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
         }
 
         // Initializes list view adapter.
@@ -183,7 +187,6 @@ public class DeviceScanActivity extends ListActivity {
         intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());
         if (mScanning) {
             mBluetoothLeScanner.stopScan(mLeScanCallback);
-            //mBluetoothAdapter.stopLeScan(mLeScanCallback);
             mScanning = false;
         }
         startActivity(intent);
@@ -196,19 +199,15 @@ public class DeviceScanActivity extends ListActivity {
                 @Override
                 public void run() {
                     mScanning = false;
-                    //mBluetoothAdapter.stopLeScan(mLeScanCallback);
                     mBluetoothLeScanner.stopScan(mLeScanCallback);
                     invalidateOptionsMenu();
                 }
             }, SCAN_PERIOD);
 
             mScanning = true;
-            //mBluetoothAdapter.startLeScan(mLeScanCallback);
-            //mBluetoothAdapter.startLeScan(interestingServiceUUIDS, mLeScanCallback);
             mBluetoothLeScanner.startScan(deviceFilters, mSettings, mLeScanCallback);
         } else {
             mScanning = false;
-            //mBluetoothAdapter.stopLeScan(mLeScanCallback);
             mBluetoothLeScanner.stopScan(mLeScanCallback);
         }
         invalidateOptionsMenu();
